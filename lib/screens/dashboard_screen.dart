@@ -45,7 +45,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
               selectedIndex: 0),
           Expanded(
-              child: Padding(
+            child: Padding(
             padding: const EdgeInsets.all(60.0),
             child: SingleChildScrollView(
                 child: Column(
@@ -76,21 +76,101 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     children: [
                       Flexible(
                         child: Card(
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [Icon(
-                                  Icons.article, 
-                                  size: 26.0,
-                                  ),
-                                  SizedBox(width: 15.0),
-                                  Text("Articles", style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold,),)
-                                  ],)],
+                          child: Padding(
+                            padding: EdgeInsets.all(18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [Icon(
+                                    Icons.article, 
+                                    size: 26.0,
+                                    ),
+                                    SizedBox(width: 15.0),
+                                    Text("Articles", style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold,),)
+                                    ],),
+                                    SizedBox(height: 20.0,),
+                                    Text("07 Articles", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                            ),
+                          ),
+                      )
+                      ),
+
+                      Flexible(
+                        child: Card(
+                          child: Padding(
+                            padding: EdgeInsets.all(18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [Icon(
+                                    Icons.comment, 
+                                    size: 26.0,
+                                    color: Colors.red,
+                                    ),
+                                    SizedBox(width: 15.0),
+                                    Text("Comments", style: TextStyle(color: Colors.red, fontSize: 26.0, fontWeight: FontWeight.bold,),)
+                                    ],),
+                                    SizedBox(height: 20.0,),
+                                    Text("+30 Comments", style: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                            ),
+                          ),
+                      )
+                      ),
+
+                      Flexible(
+                        child: Card(
+                          child: Padding(
+                            padding: EdgeInsets.all(18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [Icon(
+                                    Icons.people, 
+                                    size: 26.0,
+                                    color: Colors.amber,
+                                    ),
+                                    SizedBox(width: 15.0),
+                                    Text("Subscriptions", style: TextStyle(color: Colors.amber, fontSize: 26.0, fontWeight: FontWeight.bold,),)
+                                    ],),
+                                    SizedBox(height: 20.0,),
+                                    Text("3.5M Subscriptions", style: TextStyle(color: Colors.amber, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                            ),
+                          ),
+                      )
+                      ),
+
+                      Flexible(
+                        child: Card(
+                          child: Padding(
+                            padding: EdgeInsets.all(18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [Icon(
+                                    Icons.mobile_friendly_outlined, 
+                                    size: 26.0,
+                                    color: Colors.green,
+                                    ),
+                                    SizedBox(width: 15.0),
+                                    Text("Revenue", style: TextStyle(color: Colors.green, fontSize: 26.0, fontWeight: FontWeight.bold,),)
+                                    ],),
+                                    SizedBox(height: 20.0,),
+                                    Text("Rs. 200,300.00 ", style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.bold),)
+                                    ],
+                            ),
                           ),
                       )
                       )
                     ],
-                  )
+                  ),
+                  
                 ],
               )
             ),
