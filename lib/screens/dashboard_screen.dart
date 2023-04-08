@@ -170,13 +170,154 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       )
                     ],
                   ),
-                  
+
+                  //now let's set the article section 
+                  const SizedBox(height: 30.0,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    const Column(children: [
+                      Text("6 Articles", 
+                      style: TextStyle(fontWeight: FontWeight.bold, 
+                      fontSize: 20.0
+                      ),
+                    ),
+                    SizedBox(height: 10.0,),
+                    Text(
+                      "3 new Articles", 
+                      style: TextStyle(
+                        color: Colors.grey, 
+                        fontSize: 18.0, 
+                        fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                  Container(
+                    width: 250.0,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Type Article Title",
+                        prefixIcon: Icon(Icons.search),
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                          color: Colors.black26
+                          ),
+                          )
+                        )
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+
+                //Let's set the filter section
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  TextButton.icon(
+                    onPressed: (){}, 
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.deepPurple.shade400,
+                    ), 
+                    label: Text(
+                      "2023, July 14, July 15, July 16",
+                      style: TextStyle(
+                        color: Colors.deepPurple.shade400),
+                    ),
+                    ),
+                    Row(
+                      children: [
+                        DropdownButton(
+                          hint: Text("Filter by"),
+                          items: [
+                            DropdownMenuItem(
+                              value: "Date",
+                              child: Text("Date"),
+                            ),
+
+                            DropdownMenuItem(
+                              value: "Comments",
+                              child: Text("Comments"),
+                            ),
+
+                            DropdownMenuItem(
+                              value: "Views",
+                              child: Text("Views"),
+                            ),
+                            
+                            ], 
+                          onChanged: (value) {}),
+                          SizedBox(width: 20.0,),
+
+                        DropdownButton(
+                          hint: Text("Order by"),
+                          items: [
+                            DropdownMenuItem(
+                              value: "Date",
+                              child: Text("Date"),
+                            ),
+
+                            DropdownMenuItem(
+                              value: "Comments",
+                              child: Text("Comments"),
+                            ),
+
+                            DropdownMenuItem(
+                              value: "Views",
+                              child: Text("Views"),
+                            ),
+                            
+                            ], 
+                          onChanged: (value) {}),
+
+                        ],
+                      ),
                 ],
-              )
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+
+                //Now let's add the Table
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    DataTable(
+                      headingRowColor: MaterialStateProperty.resolveWith((states) => Colors.grey.shade200),
+                      columns: [
+                      DataColumn(label: Text("ID")),
+                      DataColumn(label: Text("Article Title")),
+                      DataColumn(label: Text("Creation Data")),
+                      DataColumn(label: Text("Views")),
+                      DataColumn(label: Text("Comments")),
+                    
+                    ], rows: [
+                      DataRow(cells: [
+                        DataCell(Text("0")),
+                        DataCell(
+                          Text("How to build a flutter web app")),
+                        DataCell(Text("$DateTime.now()}")),
+                        DataCell(Text("2.3K Views")),
+                        DataCell(Text("102Comments"))
+                        ])
+                    ])
+                  ],
+                )
+                ],
+              ),
             ),
-          )
-          )
+          ),
+          ),
         ],
+      ),
+      //let's add the floating action button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.deepPurple.shade400,
       ),
     );
   }
